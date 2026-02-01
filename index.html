@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Ledger</title>
+
+    <link rel="Icon" type="images" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F2940%2F2940288.png&f=1&nofb=1&ipt=35d8f16b2bf42b0a22caf64b4a0a2cf787b20ab9704975f8142a52059d4b4903">
+
+    <!-- dataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.11/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <!-- personal custom -->
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body class="bg-black text-white min-vh-100">
+    <header>
+        <h1 class="text-center">Personal Ledger</h1>
+        <p class="text-center">should display below</p>
+    </header>
+
+    <main>
+        <div id="entry-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Code</th>
+                        <th>Date</th>
+                        <th>Transcation Description</th>
+                        <th>Withdrawal</th>
+                        <th>Deposit</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>auto-generated</td>
+                        <td> <!-- Code Dropdown -->
+                            <select id="code">
+                                <option value="AD">AD - Automatic Deposit</option>
+                                <option value="AP">AP - Automatic Payment</option>
+                                <option value="ATM">ATM - Cash Withdrawal</option>
+                                <option value="DC">DC - Debit Card</option>
+                                <option value="FT">FT - Fund Transfer</option>
+                                <option value="MD">MD - Mobile Deposit</option>
+                                <option value="SC">SC - Service Charge</option>
+                                <option value="TD">TD - Tax Deductible</option>
+                            </select>
+                        </td>
+                        <td><input type="date" id="date"></td>
+                        <td><input type="textarea" id="description" placeholder="Enter Details Here..."></td>
+                        <td><input type="number" id="withdrawal" placeholder="0.00"></td>
+                        <td><input type="number" id="deposit" placeholder="0.00"></td>
+                        <td><button id="submit">Submit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+
+        <br>
+
+        <!-- Desktop Display -->
+        <div class="container p-4 w-75">
+            <table id="displayTable" class="table table-dark table-hover text-center">>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Code</th>
+                        <th>Date</th>
+                        <th>Transcation Description</th>
+                        <th>Withdrawal</th>
+                        <th>Deposit</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>AD</td>
+                        <td>2026-01-31</td>
+                        <td class="displayDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis natus eos enim explicabo. Sint modi dolorum hic ducimus exercitationem error deserunt est beatae voluptas, aut natus optio enim quasi aliquid!</td>
+                        <td>0.00</td>
+                        <td>100.00</td>
+                        <td>100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>SC</td>
+                        <td>2026-01-31</td>
+                        <td class="displayDescription">Test!</td>
+                        <td>0.00</td>
+                        <td>5500.00</td>
+                        <td>5600.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- Mobile Display -->
+
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- dataTables -->
+    <script src="https://cdn.datatables.net/1.13.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.11/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+
+    <!-- dataTables Injection -->
+    <script>
+        $(function () {
+            $('#displayTable').DataTable({
+                responsive: true,
+                // columns : [
+                    // {data : ""}
+                // ]
+            });
+        });
+    </script>
+
+    <!-- personal custom -->
+    <script type="module" src="./src/table.js"></script>
+</body>
+</html>
