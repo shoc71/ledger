@@ -1,28 +1,27 @@
-/* generic */
-
-/* 
-.text-center {
-    text-align: center;
+:root {
+    --main-bg-color: black;
+    --main-text-color: white;
+    --main-placeholder-color: grey;
+    --main-border-color: white;
 }
 
-#submit {
-    background-color: green;
-    color: white;
-    border: 0.5px solid white;
-}
-
-input {
+.form-control {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
-    width: 90%;
+    border-color: var(--main-border-color);
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-}
-
-select {
+.form-control:focus {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
-} 
-*/
+}
+
+.form-control::placeholder {
+    color: var(--main-placeholder-color);
+}
+
+.form-select {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border-color: var(--main-border-color);
+}

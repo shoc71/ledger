@@ -17,18 +17,21 @@
     <!-- personal custom -->
     <link rel="stylesheet" href="./src/style.css">
 </head>
-<body class="bg-black text-white min-vh-100">
+<body class="bg-black text-white min-vh-100 p-4 w-75 container">
+
     <header>
         <h1 class="text-center">Personal Ledger</h1>
         <p class="text-center">should display below</p>
+        <a href="./home.html">home</a>
     </header>
 
     <main>
         <div id="entry-table">
-            <table class="table">
+            <table class="table table-dark table-stripped">
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Account</th>
                         <th>Code</th>
                         <th>Date</th>
                         <th>Transcation Description</th>
@@ -40,8 +43,9 @@
                 <tbody>
                     <tr>
                         <td>auto-generated</td>
-                        <td> <!-- Code Dropdown -->
-                            <select id="code">
+                        <td><input class="form-control" id="account" data-bs-theme="dark"></td>
+                        <td> 
+                            <select class="form-select" id="code" data-bs-theme="dark">
                                 <option value="AD">AD - Automatic Deposit</option>
                                 <option value="AP">AP - Automatic Payment</option>
                                 <option value="ATM">ATM - Cash Withdrawal</option>
@@ -52,11 +56,11 @@
                                 <option value="TD">TD - Tax Deductible</option>
                             </select>
                         </td>
-                        <td><input type="date" id="date"></td>
-                        <td><input type="textarea" id="description" placeholder="Enter Details Here..."></td>
-                        <td><input type="number" id="withdrawal" placeholder="0.00"></td>
-                        <td><input type="number" id="deposit" placeholder="0.00"></td>
-                        <td><button id="submit">Submit</button></td>
+                        <td><input class="form-control" type="datetime-local" id="datetime" data-bs-theme="dark"></td>
+                        <td><textarea class="form-control" id="description" data-bs-theme="dark" placeholder="Enter Details Here..."></textarea></td>
+                        <td><input class="form-control" type="number" id="withdrawal" data-bs-theme="dark" placeholder="0.00"></td>
+                        <td><input class="form-control" type="number" id="deposit" data-bs-theme="dark" placeholder="0.00"></td>
+                        <td><button class="btn btn-success" id="submit" data-bs-theme="dark">Submit</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -65,45 +69,56 @@
         <br>
 
         <!-- Desktop Display -->
-        <div class="container p-4 w-75">
-            <table id="displayTable" class="table table-dark table-hover text-center">>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Code</th>
-                        <th>Date</th>
-                        <th>Transcation Description</th>
-                        <th>Withdrawal</th>
-                        <th>Deposit</th>
-                        <th>Balance</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>AD</td>
-                        <td>2026-01-31</td>
-                        <td class="displayDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis natus eos enim explicabo. Sint modi dolorum hic ducimus exercitationem error deserunt est beatae voluptas, aut natus optio enim quasi aliquid!</td>
-                        <td>0.00</td>
-                        <td>100.00</td>
-                        <td>100.00</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>SC</td>
-                        <td>2026-01-31</td>
-                        <td class="displayDescription">Test!</td>
-                        <td>0.00</td>
-                        <td>5500.00</td>
-                        <td>5600.00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        
+        <table id="displayTable" class="table table-dark table-hover text-center">>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Account</th>
+                    <th>Code</th>
+                    <th>Date</th>
+                    <th>Transcation Description</th>
+                    <th>Withdrawal</th>
+                    <th>Deposit</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2215</td>
+                    <td>AD</td>
+                    <td>2026-01-31</td>
+                    <td class="displayDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis natus eos enim explicabo. Sint modi dolorum hic ducimus exercitationem error deserunt est beatae voluptas, aut natus optio enim quasi aliquid!</td>
+                    <td>0.00</td>
+                    <td>100.00</td>
+                    <td>100.00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>6659</td>
+                    <td>SC</td>
+                    <td>2026-01-31</td>
+                    <td class="displayDescription">Test!</td>
+                    <td>0.00</td>
+                    <td>5500.00</td>
+                    <td>5600.00</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <a href="#" class="btn btn-success">
+            Add Entry
+        </a>
+        <a href="./pages/account.html" class="btn btn-success">
+            Add Account
+        </a>
 
     </main>
 
-    <!-- Mobile Display -->
+    <footer>
+
+    </footer>
 
 
     <!-- bootstrap -->
@@ -111,7 +126,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
     
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     
     <!-- dataTables -->
     <script src="https://cdn.datatables.net/1.13.11/js/jquery.dataTables.min.js"></script>
@@ -132,6 +147,6 @@
     </script>
 
     <!-- personal custom -->
-    <script type="module" src="./src/table.js"></script>
+    <script type="module" src="./src/app.js"></script>
 </body>
 </html>
