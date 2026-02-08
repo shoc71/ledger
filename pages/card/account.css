@@ -1,0 +1,40 @@
+:root {
+    --main-bg-color: black;
+    --main-text-color: white;
+    --main-placeholder-color: grey;
+    --main-border-color: white;
+    --secondary-bg-color: rgb(85, 85, 85);
+    --secondary-text-color: grey;
+    --secondary-border-color: grey;
+}
+
+.form-control {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border-color: var(--secondary-border-color);
+}
+
+.form-control:focus {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+.form-control::placeholder {
+    color: var(--main-placeholder-color);
+}
+
+.form-select {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border-color: var(--secondary-border-color);
+}
+
+.input-group-text {
+    background-color: var(--secondary-bg-color);
+    color: var(--main-text-color);
+    border-color: var(--secondary-border-color);
+}
+
+select option[value="filler"] {
+    display: none;
+}
