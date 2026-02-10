@@ -1,0 +1,25 @@
+/* :root {
+    --main-background-color: black;
+    --secondary-bg-color: rgb(94, 93, 93);
+    --main-text-color: white;
+    --secondary-text-color:grey;
+}
+
+.card {
+    background-color: var(--secondary-bg-color);
+}
+
+.form-control {
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+}
+
+.form-control:focus {
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+}
+
+.form-control::placeholder {
+    background-color: var(--main-background-color);
+    color: var(--secondary-text-color);
+} */
